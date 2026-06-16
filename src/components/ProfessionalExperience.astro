@@ -1,11 +1,29 @@
 ---
-const allExperiences = Object.values(import.meta.glob('/src/pages/experiencia/*.md', { eager: true }));
+const allExperiences = Object.values(
+  import.meta.glob('/src/pages/experiencia/*.mdx', { eager: true })
+).sort((a: any, b: any) =>
+  new Date(b.frontmatter.date.start).getTime() -
+  new Date(a.frontmatter.date.start).getTime()
+);
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+//   const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${month}/${year}`;
+};
 ---
 <section id="experiencia">
     <h2>Experiencia Profesional</h2>
     <ul>
         {allExperiences.map((experience: any) => 
-            <li><a href={experience.url}>{experience.frontmatter.company}</a></li>)
+            <li>
+                {formatDate(experience.frontmatter.date.start)} -
+                {formatDate(experience.frontmatter.date.finish)}
+                <a href={experience.url}>
+                    {experience.frontmatter.company}
+                </a>
+            </li>)            
         }
     </ul>
 </section>
