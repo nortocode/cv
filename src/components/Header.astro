@@ -1,7 +1,6 @@
 ---
 import ContactInfo from '../components/ContactInfo.astro';
 import Navigation from '../components/Navigation.astro';
-import avatar from '../assets/picture.svg';
 ---
 <header class="header">
   <img src='/picture.svg' alt="Foto personal" class="avatar" />
@@ -12,12 +11,15 @@ import avatar from '../assets/picture.svg';
     <ContactInfo />
     <Navigation />
   </div>
+
+  <button id="theme-toggle" class="theme-toggle">🌓</button>
 </header>
 
 <style>
   .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 1.5rem;
     padding: 1rem 0;
   }
@@ -36,4 +38,33 @@ import avatar from '../assets/picture.svg';
   .header-text p {
     margin: 0.2rem 0 1rem;
   }
+
+  .theme-toggle {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: var(--text);
+  }
 </style>
+
+<script>
+  const root = document.documentElement;
+  const saved = localStorage.getItem("theme");
+  const toggle = document.getElementById("theme-toggle");
+
+  if (saved) root.setAttribute("data-theme", saved);
+
+  if (toggle) {
+    toggle.onclick = () => {
+      const current = root.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    };
+  }
+</script>
