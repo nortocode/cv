@@ -1,0 +1,14 @@
+---
+import { getTags } from '../lib/experiences';
+import styles from './SkillsCloud.module.css';
+
+const tags = getTags();
+---
+<section id="habilidades">
+    <h2>Habilidades técnicas</h3>
+    <div class={styles.tagCloud}>
+        {tags.map((tag) => (
+            <span class={styles.tag}>{tag}</span>
+        ))}
+    </div>
+</section>

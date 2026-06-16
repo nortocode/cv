@@ -1,10 +1,8 @@
 ---
-const allExperiences = Object.values(
-  import.meta.glob('/src/pages/experiencia/*.mdx', { eager: true })
-).sort((a: any, b: any) =>
-  new Date(b.frontmatter.date.start).getTime() -
-  new Date(a.frontmatter.date.start).getTime()
-);
+import { getExperiences } from '../lib/experiences';
+
+const experiences = getExperiences();
+
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
 //   const day = String(date.getDate()).padStart(2, '0');
@@ -16,7 +14,7 @@ const formatDate = (dateString: string) => {
 <section id="experiencia">
     <h2>Experiencia Profesional</h2>
     <ul>
-        {allExperiences.map((experience: any) => 
+        {experiences.map((experience: any) => 
             <li>
                 {formatDate(experience.frontmatter.date.start)} -
                 {formatDate(experience.frontmatter.date.finish)}

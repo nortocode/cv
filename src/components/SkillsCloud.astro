@@ -1,0 +1,13 @@
+---
+import styles from './SkillsCloud.module.css';
+
+const { tags } = Astro.props;
+---
+<section id="habilidades">
+    <h2>Habilidades técnicas</h2>
+    <div class={styles.tagCloud}>
+        {tags.map((tag:any) => (
+            <span class={styles.tag}>{tag}</span>
+        ))}
+    </div>
+</section>

@@ -13,6 +13,7 @@ responsibilities: [
 tags: ['Backend', '.NET', 'C#', '.NET Framework', 'Visual Basic', 'MSSQL Server', 'Git', 'HTML', 'Javascript', 'CSS', 'Bases de datos', 'Control de versiones', 'RPA', 'Automatización de procesos', 'WPF', 'Windows Forms']
 ---
 import Navigation from '../../components/Navigation.astro';
+import SkillsCloud from '../../components/SkillsCloud.astro'
 
 # AXA España
 
@@ -27,4 +28,5 @@ import Navigation from '../../components/Navigation.astro';
 
 ***ToDo, pendiente de describir**
 
+<SkillsCloud tags={[...frontmatter.tags].sort((a, b) => a.localeCompare(b))} />
 <Navigation />
