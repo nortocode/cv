@@ -1,0 +1,11 @@
+---
+const allExperiences = Object.values(import.meta.glob('/src/pages/experiencia/*.md', { eager: true }));
+---
+<section id="experiencia">
+    <h2>Experiencia Profesional</h2>
+    <ul>
+        {allExperiences.map((experience: any) => 
+            <li><a href={experience.url}>{experience.frontmatter.company}</a></li>)
+        }
+    </ul>
+</section>
