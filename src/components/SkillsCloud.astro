@@ -1,5 +1,6 @@
 ---
 import styles from './SkillsCloud.module.css';
+import { slugifyTag } from '../lib/utils';
 
 const { tags } = Astro.props;
 ---
@@ -7,7 +8,12 @@ const { tags } = Astro.props;
     <h2>Habilidades técnicas</h2>
     <div class={styles.tagCloud}>
         {tags.map((tag:any) => (
-            <span class={styles.tag}>{tag}</span>
+            <a
+                href={`/tags/${slugifyTag(tag)}`}
+                class={styles.tag}
+                title={`Ver experiencias con ${tag}`}>
+                {tag}
+            </a>
         ))}
     </div>
 </section>

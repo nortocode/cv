@@ -1,0 +1,41 @@
+---
+import { getTags, getExperiences, slugifyTag, formatDate } from '../../lib/utils';
+import Navigation from '../../components/Navigation.astro';
+
+export async function getStaticPaths() {
+  const experiences = getExperiences();
+  const skills = getTags();
+
+  return skills.map((tag) => {
+    const filtered = experiences.filter((exp: any) =>
+      exp.frontmatter.tags.includes(tag)
+    );
+
+    return {
+      params: { tag: slugifyTag(tag) },
+      props: { jobs: filtered }
+    };
+  });
+}
+
+const { jobs } = Astro.props;
+const { tag } = Astro.params;
+---
+<meta charset="UTF-8">
+
+<h1>{tag}</h1>
+
+<ul>
+  {jobs.map((job: any) => (
+    <li>
+      {formatDate(job.frontmatter.date.start)} -
+      {formatDate(job.frontmatter.date.finish)}
+      <a href={job.url}>
+        {job.frontmatter.company}
+      </a>
+      <a href={job.url}>{job.frontmatter.company}</a>
+    </li>
+  ))}
+</ul>
+
+<Navigation />
