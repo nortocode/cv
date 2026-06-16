@@ -1,0 +1,33 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SkillsCloud from '../components/SkillsCloud.astro';
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+//   const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const year = date.getFullYear();
+  return `${month}/${year}`;
+};
+const props = Astro.props;
+---
+<BaseLayout {...Astro.props}>  
+  <section>
+    <h1>{props.content.company}</h1>
+    <p>Sector <em>{props.content.industry}</em></p>
+
+    <p><strong>{props.content.role}</strong></p>
+
+    <p>
+      {formatDate(props.content.date.start)}
+      -
+      {formatDate(props.content.date.finish)}
+    </p>
+<!-- todo: rellenar funciones y logros en el yaml -->
+    <article>
+      <slot />
+    </article>
+
+    <SkillsCloud tags={props.content.tags} />
+  </section>
+</BaseLayout>

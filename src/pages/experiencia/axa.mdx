@@ -1,24 +1,33 @@
 ---
-layout: ../../layouts/BaseLayout.astro
-company: 'AXA España'
-industry: 'Seguros'
-city: 'Madrid'
-role: 'Analista programador'
+layout: ../../layouts/ExperienceLayout.astro
+company: AXA España
+industry: Seguros
+city: Madrid
+role: Analista programador
 date:
-    start: 2018-02-01
-    finish: 2020-01-01
-responsibilities: [
-    'Encargado del análisis, diseño y desarrollo de una aplicación de gestión interna (tramitación de siniestros)',
-    'Análisis y desarrollo de proyectos de Robotización y Automatización de Procesos (RPA).'
-]
-tags: ['Backend', '.NET', 'C#', '.NET Framework', 'Visual Basic', 'MSSQL Server', 'Git', 'HTML', 'Javascript', 'CSS', 'Bases de datos', 'Control de versiones', 'RPA', 'Automatización de procesos', 'WPF', 'Windows Forms']
+  start: 2018-02-01
+  finish: 2020-01-01
+responsibilities:
+  - Encargado del análisis, diseño y desarrollo de una aplicación de gestión interna (tramitación de siniestros)
+  - Análisis y desarrollo de proyectos de Robotización y Automatización de Procesos (RPA).
+tags:
+  - Backend
+  - .NET
+  - C#
+  - .NET Framework
+  - Visual Basic
+  - MSSQL Server
+  - Git
+  - HTML
+  - Javascript
+  - CSS
+  - Bases de datos
+  - Control de versiones
+  - RPA
+  - Automatización de procesos
+  - WPF
+  - Windows Forms
 ---
-import SkillsCloud from '../../components/SkillsCloud.astro'
-
-# AXA España
-
-***ToDo, pendiente de crear bloque común**
-
 ## Funciones
 
 - Encargado del análisis, diseño y desarrollo de una aplicación de gestión interna (tramitación de siniestros).
@@ -27,5 +36,3 @@ import SkillsCloud from '../../components/SkillsCloud.astro'
 ## Logros
 
 ***ToDo, pendiente de describir**
-
-<SkillsCloud tags={[...frontmatter.tags].sort((a, b) => a.localeCompare(b))} />
