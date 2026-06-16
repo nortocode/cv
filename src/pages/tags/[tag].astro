@@ -30,9 +30,6 @@ const { tag } = Astro.params;
     <li>
       {formatDate(job.frontmatter.date.start)} -
       {formatDate(job.frontmatter.date.finish)}
-      <a href={job.url}>
-        {job.frontmatter.company}
-      </a>
       <a href={job.url}>{job.frontmatter.company}</a>
     </li>
   ))}
