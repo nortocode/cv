@@ -1,0 +1,28 @@
+---
+company: 'NTT Data Spain'
+industry: 'Utilities'
+city: 'Madrid'
+role: 'Analista programador'
+date:
+    start: 2024-01-01
+    finish: 2025-02-01
+responsibilities: [
+    'Mantenimiento y desarrollo de backend para el sector energético utilizando .NET Core.',
+    'Implementación de API REST y gestión de bases de datos MSSQL Server.',
+    'Uso de Azure DevOps y Docker para el ciclo de vida del desarrollo.'
+]
+tags: ['Backend', '.NET', 'C#', '.NET Framework', '.NET Core', 'API REST', 'MSSQL Server', 'Azure DevOps', 'DevOps', 'Docker', 'Git', 'Git Kraken', 'Web Services', 'HTML', 'Javascript', 'CSS', 'Bases de datos', 'Procedimientos almacenados', 'MVC', 'Arquitectura hexagonal', 'Control de versiones', 'Jira', 'Agile']
+---
+# NTT Data Spain
+
+***ToDo, pendiente de crear bloque común**
+
+## Funciones
+
+- Mantenimiento y desarrollo de backend para el sector energético utilizando .NET Core.
+- Implementación de API REST y gestión de bases de datos MSSQL Server.
+- Uso de Azure DevOps y Docker para el ciclo de vida del desarrollo.
+
+## Logros
+
+***ToDo, pendiente de describir**

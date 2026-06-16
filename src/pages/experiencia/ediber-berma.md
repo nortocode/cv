@@ -1,0 +1,24 @@
+---
+company: 'Ediber, SL - Berma, SA'
+industry: 'Editorial'
+city: 'Madrid'
+role: 'Administrativo'
+date:
+    start: 1989-01-01
+    finish: 2012-12-01
+responsibilities: [
+    'Sector distribución editorial. Trato con proveedores y clientes, administración y apoyo contable, gestión informática.'
+]
+tags: ['Administrativo', 'Gestión de almacén', 'Contabilidad básica', 'Clientes', 'Proveedores', 'ERP']
+---
+# Ediber, SL - Berma, SA
+
+***ToDo, pendiente de crear bloque común**
+
+## Funciones
+
+- Sector distribución editorial. Trato con proveedores y clientes, administración y apoyo contable, gestión informática.
+
+## Logros
+
+***ToDo, pendiente de describir**

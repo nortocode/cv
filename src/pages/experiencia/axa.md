@@ -1,0 +1,26 @@
+---
+company: 'AXA España'
+industry: 'Seguros'
+city: 'Madrid'
+role: 'Analista programador'
+date:
+    start: 2018-02-01
+    finish: 2020-01-01
+responsibilities: [
+    'Encargado del análisis, diseño y desarrollo de una aplicación de gestión interna (tramitación de siniestros)',
+    'Análisis y desarrollo de proyectos de Robotización y Automatización de Procesos (RPA).'
+]
+tags: ['Backend', '.NET', 'C#', '.NET Framework', 'Visual Basic', 'MSSQL Server', 'Git', 'HTML', 'Javascript', 'CSS', 'Bases de datos', 'Control de versiones', 'RPA', 'Automatización de procesos', 'WPF', 'Windows Forms']
+---
+# AXA España
+
+***ToDo, pendiente de crear bloque común**
+
+## Funciones
+
+- Encargado del análisis, diseño y desarrollo de una aplicación de gestión interna (tramitación de siniestros).
+- Análisis y desarrollo de proyectos de Robotización y Automatización de Procesos (RPA).
+
+## Logros
+
+***ToDo, pendiente de describir**

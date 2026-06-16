@@ -1,0 +1,28 @@
+---
+company: 'Reale España'
+industry: 'Seguros'
+city: 'Madrid'
+role: 'Desarrollador'
+date:
+    start: 2020-02-01
+    finish: 2022-12-01
+responsibilities: [
+    'Desarrollo y mantenimiento de servicios web SOAP y REST sobre proyectos .NET (MVC)',
+    'Creación y optimización de tablas y procedimientos almacenados en ORACLE.',
+    'Desarrollo de aplicación web para monitorización e integración de servicios.'
+]
+tags: ['Backend', '.NET', 'C#', '.NET Framework', 'API REST', 'API SOAP', 'ORACLE', 'Procedimientos almacenados', 'Git', 'TFS', 'Control de versiones', 'Web Services', 'HTML', 'Javascript', 'CSS', 'Bases de datos', 'Scrum']
+---
+# Reale España
+
+***ToDo, pendiente de crear bloque común**
+
+## Funciones
+
+- Desarrollo y mantenimiento de servicios web SOAP y REST sobre proyectos .NET (MVC).
+- Creación y optimización de tablas y procedimientos almacenados en ORACLE.
+- Desarrollo de aplicación web para monitorización e integración de servicios.
+
+## Logros
+
+***ToDo, pendiente de describir**

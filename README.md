@@ -1,8 +1,7 @@
-# todo list, pendiente de hacer
+# ToDo list, pendiente de hacer
 
 - /public
     - favicon.ico
 
 - /assets
     - background, etc...
-        
