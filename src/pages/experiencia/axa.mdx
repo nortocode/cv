@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/BaseLayout.astro
 company: 'AXA España'
 industry: 'Seguros'
 city: 'Madrid'
@@ -12,7 +13,6 @@ responsibilities: [
 ]
 tags: ['Backend', '.NET', 'C#', '.NET Framework', 'Visual Basic', 'MSSQL Server', 'Git', 'HTML', 'Javascript', 'CSS', 'Bases de datos', 'Control de versiones', 'RPA', 'Automatización de procesos', 'WPF', 'Windows Forms']
 ---
-import Navigation from '../../components/Navigation.astro';
 import SkillsCloud from '../../components/SkillsCloud.astro'
 
 # AXA España
@@ -29,4 +29,3 @@ import SkillsCloud from '../../components/SkillsCloud.astro'
 ***ToDo, pendiente de describir**
 
 <SkillsCloud tags={[...frontmatter.tags].sort((a, b) => a.localeCompare(b))} />
-<Navigation />

@@ -1,6 +1,6 @@
 ---
 import { getTags, getExperiences, slugifyTag, formatDate } from '../../lib/utils';
-import Navigation from '../../components/Navigation.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   const experiences = getExperiences();
@@ -21,7 +21,7 @@ export async function getStaticPaths() {
 const { jobs } = Astro.props;
 const { tag } = Astro.params;
 ---
-<meta charset="UTF-8">
+<BaseLayout>
 
 <h1>{tag}</h1>
 
@@ -38,4 +38,4 @@ const { tag } = Astro.params;
   ))}
 </ul>
 
-<Navigation />
+</BaseLayout>

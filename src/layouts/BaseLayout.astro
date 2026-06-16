@@ -1,10 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import ProfessionalProfile from '../components/ProfessionalProfile.astro';
-import ProfessionalExperience from '../components/ProfessionalExperience.astro';
-import Skills from '../components/Skills.astro';
-import TrainingProfile from '../components/TrainingProfile.astro';
+import '../styles/global.css';
 ---
 <!DOCTYPE html>
 <html lang="es-ES">
@@ -17,13 +14,7 @@ import TrainingProfile from '../components/TrainingProfile.astro';
     <Header />    
     
     <main>
-        <ProfessionalProfile />
-
-        <ProfessionalExperience />
-
-        <Skills />
-
-        <TrainingProfile />
+        <slot />
     </main>
 
     <Footer />
