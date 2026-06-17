@@ -7,4 +7,5 @@ export default defineConfig({
     integrations: [mdx()],
     site: 'http://localhost:8080',
     base: '/',
+    trailingSlash: 'never',
 });
