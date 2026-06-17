@@ -5,4 +5,6 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
     integrations: [mdx()],
+    site: 'http://localhost:8080',
+    base: '/',
 });
