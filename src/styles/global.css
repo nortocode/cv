@@ -95,7 +95,8 @@ header {
 
 header p {
   font-size: 1.1rem;
-  color: #444;
+  /* color: #444; */
+  color: var(--text);
 }
 
 header nav ul {
@@ -139,7 +140,8 @@ footer {
   padding-top: 2rem;
   border-top: 1px solid #ddd;
   text-align: center;
-  color: #555;
+  /* color: #555; */
+  color: var(--text);
 }
 
 footer nav ul {
