@@ -23,6 +23,37 @@ body {
 }
 
 /* ------------------------------
+   TAILWIND CUSTOM UTILITIES
+------------------------------ */
+
+@layer utilities {
+  .layout-side-panels {
+    @apply 
+      before:left-0
+      before:content-['']
+      before:fixed
+      before:top-0
+      before:w-[20%]
+      before:h-full
+      before:bg-[var(--card-bg)]
+      before:opacity-40
+      before:pointer-events-none
+      before:z-[1]
+      
+      after:right-0
+      after:content-['']
+      after:fixed
+      after:top-0
+      after:w-[20%]
+      after:h-full
+      after:bg-[var(--card-bg)]
+      after:opacity-40
+      after:pointer-events-none
+      after:z-[1]
+  }
+}
+
+/* ------------------------------
    MODO CLARO / OSCURO
 ------------------------------ */
 :root {
@@ -99,7 +130,6 @@ header {
 
 header p {
   font-size: 1.1rem;
-  /* color: #444; */
   color: var(--text);
 }
 

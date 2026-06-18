@@ -11,8 +11,8 @@ import '../styles/global.css';
     <link rel="icon" href="/picture.ico" />
     <title>Portfolio</title>
 </head>
-<body>
-    <div class="page-wrapper">
+<body class="bg-[var(--bg)] m-0 layout-side-panels">
+    <div class="max-w-[900px] mx-auto my-4 p-8 bg-[var(--card-bg)] rounded-xl relative z-[2] shadow-[0_0_40px_rgba(0,0,0,0.05)]">
         <Header />
 
         <main class="content">
@@ -23,42 +23,6 @@ import '../styles/global.css';
     </div>
 </body>
 </html>
-<style>
-    body {
-        background: var(--bg);
-        margin: 0;
-    }
 
-    .page-wrapper {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 2rem;
-        background: var(--card-bg);
-        border-radius: 12px;
-        box-shadow: 0 0 40px rgba(0,0,0,0.05);
-        position: relative;
-        z-index: 2;
-    }
 
-    /* Laterales */
-    body::before,
-    body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        width: 20%;
-        height: 100%;
-        background: var(--card-bg);
-        opacity: 0.4;
-        z-index: 1;
-        pointer-events: none;
-    }
 
-    body::before {
-        left: 0;
-    }
-
-    body::after {
-        right: 0;
-    }
-</style>
