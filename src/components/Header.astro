@@ -2,55 +2,18 @@
 import ContactInfo from '../components/ContactInfo.astro';
 import Navigation from '../components/Navigation.astro';
 ---
-<header class="header">
-  <img src='/picture.svg' alt="Foto personal" class="avatar" />
+<header class="flex items-center justify-between gap-6 py-4">
+  <img src='/picture.svg' alt="Foto personal" class="w-20 h-20 rounded-full object-cover" />
 
-  <div class="header-text">
-    <h1>Norberto Bermejo Arribas</h1>
-    <p>Fullstack Web Developer</p>
+  <div>
+    <h1 class="m-0">Norberto Bermejo Arribas</h1>
+    <p class="mt-[0.2rem] mb-4">Fullstack Web Developer</p>
     <ContactInfo />
     <Navigation />
   </div>
 
-  <button id="theme-toggle" class="theme-toggle">🌓</button>
+  <button id="theme-toggle" class="absolute top-2 right-2 bg-none border-none text-[1.4rem] cursor-pointer text-[var(--text])">🌓</button>
 </header>
-
-<style>
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    padding: 1rem 0;
-  }
-
-  .avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .header-text h1 {
-    margin: 0;
-  }
-
-  .header-text p {
-    margin: 0.2rem 0 1rem;
-  }
-
-  .theme-toggle {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    color: var(--text);
-  }
-</style>
 
 <script>
   const root = document.documentElement;
