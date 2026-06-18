@@ -2,14 +2,20 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+
+const { 
+    title = "Norberto - Portfolio",
+    description = "Portfolio profesional de Norberto, desarrollador web fullstack."
+} = Astro.props
 ---
 <!DOCTYPE html>
 <html lang="es-ES">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description} />
     <link rel="icon" href="/picture.ico" />
-    <title>Portfolio</title>
+    <title>{title}</title>
 </head>
 <body class="bg-bg m-0 layout-side-panels">
     <div class="max-w-[900px] mx-auto my-4 p-8 bg-card rounded-xl relative z-[2] shadow-[0_0_40px_rgba(0,0,0,0.05)]">
