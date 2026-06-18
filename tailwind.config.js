@@ -9,7 +9,20 @@ export default {
         bg: 'var(--bg)',
         text: 'var(--text)',
         card: 'var(--card-bg)'
-      }
+      },
+      fontFamily: {
+        sans: [
+          "system-ui",
+          "-apple-system",
+          "Segoe UI",
+          "Roboto",
+          "sans-serif"
+        ]
+      },
+      fontSize: {
+          h1: "2.2rem",
+          h2: "1.6rem",
+      },
     },
   },
   plugins: [],

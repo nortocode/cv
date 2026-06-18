@@ -35,11 +35,11 @@
   }
 
   h1 {
-    @apply text-[2.2rem] mb-[0.2rem];
+    @apply text-h1 mb-[0.2rem];
   }
 
   h2 {
-    @apply text-[1.6rem] mb-4;
+    @apply text-h2 mb-4;
   }
 
   p, li {
