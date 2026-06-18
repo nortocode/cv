@@ -13,7 +13,7 @@ const normalized = Array.isArray(tags)
         {Object.entries(normalized).map(([tag, count]) => (
         <a
             href={`/tags/${slugifyTag(tag)}`}
-            class="bg-[#eef3ff] py-[0.3rem] px-[0.6rem] text-[0.9rem] rounded-md hover:bg-[lightgreen] hover:no-underline"
+            class="bg-[#eef3ff] py-[0.3rem] px-[0.6rem] text-[0.9rem] rounded-md hover:bg-[lightgreen] hover:no-underline hover:translate-y-[-2px]"
             title={`Ver experiencias con ${tag}`}
         >
             {tag}
