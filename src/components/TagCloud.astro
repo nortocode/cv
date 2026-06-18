@@ -1,0 +1,27 @@
+---
+import { slugifyTag } from '../lib/utils';
+
+const { tags, title = "Habilidades técnicas", showCount = false } = Astro.props;
+
+const normalized = Array.isArray(tags)
+  ? Object.fromEntries(tags.map((t) => [t, 1]))
+  : tags;
+---
+<section id="habilidades">
+    <h2>{title}</h2>
+    <div class="flex flex-wrap gap-2 pl-6">
+        {Object.entries(normalized).map(([tag, count]) => (
+        <a
+            href={`/tags/${slugifyTag(tag)}`}
+            class="bg-[#eef3ff] py-[0.3rem] px-[0.6rem] text-[0.9rem] rounded-md hover:bg-[lightgreen] hover:no-underline"
+            title={`Ver experiencias con ${tag}`}
+        >
+            {tag}
+            {showCount && 
+            <span class="ml-1 inline-flex items-center justify-center w-5 h-5 rounded-full bg-gray-200 text-gray-600 text-xs">
+                {count}
+            </span>}
+        </a>
+        ))}
+    </div>
+</section>
