@@ -11,12 +11,20 @@
     --bg: #ffffff;
     --text: #111111;
     --card-bg: #f5f5f5;
+    --link-color: #0057d8;
+    --tag-bg: #eef3ff;
+    --tag-text: #003a8c;
+    --tag-hover: #d9e8ff;
   }
 
   html[data-theme="dark"] {
     --bg: #0d0d0d;
     --text: #e5e5e5;
     --card-bg: #1a1a1a;
+    --link-color: #66b3ff;
+    --tag-bg: #1e3a5f;
+    --tag-text: #a3d4ff;
+    --tag-hover: #2a4f7a;
   }
 
   html {
@@ -24,7 +32,7 @@
   }
 
   body {
-    @apply font-sans leading-relaxed text-text bg-bg transition-colors duration-1000 ease-in-out;
+    @apply font-sans leading-relaxed text-text bg-bg transition-colors duration-1000 ease-in-out overflow-x-hidden;
   }
 
 /* ------------------------------
@@ -35,29 +43,29 @@
   }
 
   h1 {
-    @apply text-h1 mb-[0.2rem];
+    @apply text-2xl sm:text-3xl md:text-h1 mb-[0.2rem];
   }
 
   h2 {
-    @apply text-h2 mb-4;
+    @apply text-xl sm:text-2xl md:text-h2 mb-4;
   }
 
   p, li {
-    @apply text-base mb-[0.8rem];
+    @apply text-sm sm:text-base mb-[0.8rem];
   }
   
 /* ------------------------------
    ENLACES
 ------------------------------ */
   a {
-    @apply text-[#0057d8] no-underline hover:underline transition-colors duration-[250ms] ease-in-out;
+    @apply text-[var(--link-color)] no-underline hover:underline transition-colors duration-[250ms] ease-in-out;
   }
 
 /* ------------------------------
    SECCIONES
 ------------------------------ */
   section {
-    @apply mb-12;
+    @apply mb-6 sm:mb-8 md:mb-12;
   }
 
   ul {
@@ -80,26 +88,26 @@
 @layer utilities {
   .layout-side-panels {
     @apply 
-      before:left-0
-      before:content-['']
-      before:fixed
-      before:top-0
-      before:w-[20%]
-      before:h-full
-      before:bg-card
-      before:opacity-40
-      before:pointer-events-none
-      before:z-[1]
+      2xl:before:left-0
+      2xl:before:content-['']
+      2xl:before:fixed
+      2xl:before:top-0
+      2xl:before:w-[20%]
+      2xl:before:h-full
+      2xl:before:bg-card
+      2xl:before:opacity-40
+      2xl:before:pointer-events-none
+      2xl:before:z-[1]
       
-      after:right-0
-      after:content-['']
-      after:fixed
-      after:top-0
-      after:w-[20%]
-      after:h-full
-      after:bg-card
-      after:opacity-40
-      after:pointer-events-none
-      after:z-[1]
+      2xl:after:right-0
+      2xl:after:content-['']
+      2xl:after:fixed
+      2xl:after:top-0
+      2xl:after:w-[20%]
+      2xl:after:h-full
+      2xl:after:bg-card
+      2xl:after:opacity-40
+      2xl:after:pointer-events-none
+      2xl:after:z-[1]
   }
 }
