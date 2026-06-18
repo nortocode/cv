@@ -1,9 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import foto from '../assets/picture.svg';
 import ContactInfo from '../components/ContactInfo.astro';
 import Navigation from '../components/Navigation.astro';
 ---
 <header class="flex items-center justify-between gap-6 py-4 mb-8 text-center">
-  <img src='/picture.svg' alt="Foto personal" class="w-20 h-20 rounded-full object-cover" />
+  <Image src={foto} alt="Foto personal" class="w-20 h-20 rounded-full object-cover" width="80" height="80" />
 
   <div>
     <h1 class="m-0">Norberto Bermejo Arribas</h1>
