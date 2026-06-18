@@ -1,25 +1,18 @@
 ---
-import styles from './SkillsCloud.module.css';
 import { slugifyTag } from '../lib/utils';
 
 const { tags } = Astro.props;
 ---
 <section id="habilidades">
     <h2>Habilidades técnicas</h2>
-    <div class={styles.tagCloud}>
+    <div class="flex flex-wrap gap-2 pl-6">
         {tags.map((tag:any) => (
             <a
                 href={`/tags/${slugifyTag(tag)}`}
-                class={styles.tag}
+                class="bg-[#eef3ff] py-[0.3rem] px-[0.6rem] text-[0.9rem] rounded-md hover:bg-[lightgreen] hover:no-underline"
                 title={`Ver experiencias con ${tag}`}>
                 {tag}
             </a>
         ))}
     </div>
 </section>
-<style>
-    a:hover {
-        background-color: lightgreen;
-        text-decoration: none;
-    }
-</style>
