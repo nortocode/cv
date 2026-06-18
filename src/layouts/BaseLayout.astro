@@ -2,20 +2,26 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
+
+const { 
+    title = "Norberto - Portfolio",
+    description = "Portfolio profesional de Norberto, desarrollador web fullstack."
+} = Astro.props
 ---
 <!DOCTYPE html>
 <html lang="es-ES">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content={description} />
     <link rel="icon" href="/picture.ico" />
-    <title>Portfolio</title>
+    <title>{title}</title>
 </head>
-<body>
-    <div class="page-wrapper">
+<body class="bg-bg m-0 layout-side-panels">
+    <div class="max-w-[900px] mx-auto my-4 px-5 py-4 sm:px-6 sm:py-6 md:px-8 md:py-8 bg-card rounded-xl ...">
         <Header />
 
-        <main class="content">
+        <main class="content px-1 sm:px-0">
             <slot />
         </main>
 
@@ -23,42 +29,3 @@ import '../styles/global.css';
     </div>
 </body>
 </html>
-<style>
-    body {
-        background: var(--bg);
-        margin: 0;
-    }
-
-    .page-wrapper {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 2rem;
-        background: var(--card-bg);
-        border-radius: 12px;
-        box-shadow: 0 0 40px rgba(0,0,0,0.05);
-        position: relative;
-        z-index: 2;
-    }
-
-    /* Laterales */
-    body::before,
-    body::after {
-        content: "";
-        position: fixed;
-        top: 0;
-        width: 20%;
-        height: 100%;
-        background: var(--card-bg);
-        opacity: 0.4;
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    body::before {
-        left: 0;
-    }
-
-    body::after {
-        right: 0;
-    }
-</style>

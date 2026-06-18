@@ -1,56 +1,24 @@
 ---
+import { Image } from "astro:assets";
+import foto from '../assets/picture.svg';
 import ContactInfo from '../components/ContactInfo.astro';
 import Navigation from '../components/Navigation.astro';
 ---
-<header class="header">
-  <img src='/picture.svg' alt="Foto personal" class="avatar" />
+<header class="flex flex-col items-center gap-4 py-4 mb-8 text-center sm:flex-row sm:items-start sm:gap-4 sm:justify-start relative">
 
-  <div class="header-text">
-    <h1>Norberto Bermejo Arribas</h1>
-    <p>Fullstack Web Developer</p>
+  <Image src={foto} alt="Foto personal" class="w-20 h-20 rounded-full object-cover" width="80" height="80" />
+
+  <div>
+    <h1 class="m-0">Norberto Bermejo Arribas</h1>
+    <p class="mt-[0.2rem] mb-4 text-[1.1rem] text-text">Fullstack Web Developer</p>
     <ContactInfo />
+    <hr class="m-4">
     <Navigation />
   </div>
 
-  <button id="theme-toggle" class="theme-toggle">🌓</button>
+  <button id="theme-toggle" class="text-[1.4rem] cursor-pointer text-text md:absolute md:top-2 md:right-2" >🌓</button>
+
 </header>
-
-<style>
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    padding: 1rem 0;
-  }
-
-  .avatar {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-
-  .header-text h1 {
-    margin: 0;
-  }
-
-  .header-text p {
-    margin: 0.2rem 0 1rem;
-  }
-
-  .theme-toggle {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    cursor: pointer;
-    color: var(--text);
-  }
-</style>
 
 <script>
   const root = document.documentElement;

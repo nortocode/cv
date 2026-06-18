@@ -1,25 +1,7 @@
 ---
-import { getTags, slugifyTag } from '../lib/utils';
-import styles from './SkillsCloud.module.css';
+import { getTags } from '../lib/utils';
+import TagCloud from './TagCloud.astro';
 
 const tags = getTags();
 ---
-<section id="habilidades">
-    <h2>Habilidades técnicas</h3>
-    <div class={styles.tagCloud}>
-        {tags.map((tag) => (
-            <a
-                href={`/tags/${slugifyTag(tag)}`}
-                class={styles.tag}
-                title={`Ver experiencias con ${tag}`}>
-                {tag}
-            </a>
-        ))}
-    </div>
-</section>
-<style>
-    a:hover {
-        background-color: lightgreen;
-        text-decoration: none;
-    }
-</style>
+<TagCloud tags={tags} showCount={true} />

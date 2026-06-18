@@ -16,11 +16,19 @@ export const getExperiences = () => {
 
 export const getTags = () => {
   const experiences = getExperiences();
-  return Array.from(
-    new Set(
-      experiences.flatMap((exp: any) => exp.frontmatter.tags || [])
-    )
-  ).sort((a, b) => a.localeCompare(b));
+  const tagCount: Record<string, number> = {};
+
+  experiences.forEach((exp) => {
+    exp.frontmatter.tags.forEach((tag:any) => {
+      tagCount[tag] = (tagCount[tag] || 0) + 1;
+    });
+  });
+
+  const ordered = Object.fromEntries(
+    Object.entries(tagCount).sort(([a], [b]) => a.localeCompare(b))
+  );
+
+  return ordered;
 };
 
 export const slugifyTag = (tag: string) =>

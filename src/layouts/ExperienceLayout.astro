@@ -10,8 +10,10 @@ const formatDate = (dateString: string) => {
   return `${month}/${year}`;
 };
 const props = Astro.props;
+const title = `Experiencia en ${props.content.company}`;
+const description = `${props.content.role} en ${props.content.company}`;
 ---
-<BaseLayout {...Astro.props}>  
+<BaseLayout {...Astro.props} {title} {description}>  
   <section>
     <h1>{props.content.company}</h1>
     <p>Sector <em>{props.content.industry}</em></p>
