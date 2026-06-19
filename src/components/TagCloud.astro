@@ -1,37 +1,56 @@
 ---
 import { slugifyTag } from '../lib/utils';
+import SkillFilter from "../components/react/SkillFilter.jsx";
 
 const { tags, title = "Habilidades técnicas", showCount = false } = Astro.props;
 
 const normalized = Array.isArray(tags)
   ? Object.fromEntries(tags.map((t) => [t, 1]))
   : tags;
+const skills = Object.keys(normalized);
 ---
 <section id="habilidades">
     <h2>{title}</h2>
 
-    <div class="flex flex-wrap gap-2 pl-6">
+    <SkillFilter skills={skills} client:load />
+
+    <div id="tag-cloud" class="flex flex-wrap gap-2 pl-6">
+
         {Object.entries(normalized).map(([tag, count]) => (
         <a
+            data-tag={tag}
             href={`/tags/${slugifyTag(tag)}`}
             class="py-[0.3rem] px-[0.6rem] text-[0.9rem] rounded-md 
-                   hover:no-underline hover:translate-y-[-2px]"
+                hover:no-underline hover:translate-y-[-2px]"
             style={`background-color: var(--tag-bg); color: var(--tag-text);`}
             onmouseover={`this.style.backgroundColor='var(--tag-hover)'`}
             onmouseout={`this.style.backgroundColor='var(--tag-bg)'`}
-            title={`Ver experiencias con ${tag}`}
-        >
-            {tag}
+            title={`Ver experiencias con ${tag}`}>
+        {tag}
 
-            {showCount && 
+        {showCount && 
             <span 
-                class="ml-1 inline-flex items-center justify-center w-5 h-5 rounded-full text-xs"
-                style="background-color: var(--tag-text); color: var(--tag-bg);"
+            class="ml-1 inline-flex items-center justify-center w-5 h-5 rounded-full text-xs"
+            style="background-color: var(--tag-text); color: var(--tag-bg);"
             >
-                {count}
-            </span>}
-        </a>
+            {count}
+            </span>
+        }
+      </a>
+
         ))}
     </div>
+
+    <script>
+        window.addEventListener("skills-filtered", (event) => {
+            const allowed = (event as CustomEvent<string[]>).detail;
+            const items = document.querySelectorAll<HTMLAnchorElement>("#tag-cloud [data-tag]");
+
+            items.forEach((el) => {
+                const tag = el.getAttribute("data-tag") ?? "";
+                el.style.display = allowed.includes(tag) ? "inline-flex" : "none";
+            });
+        });
+    </script>
 </section>
 
