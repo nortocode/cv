@@ -22,10 +22,7 @@ import Navigation from '../components/Navigation.astro';
 
 <script>
   const root = document.documentElement;
-  const saved = localStorage.getItem("theme");
   const toggle = document.getElementById("theme-toggle");
-
-  if (saved) root.setAttribute("data-theme", saved);
 
   if (toggle) {
     toggle.onclick = () => {
